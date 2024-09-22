@@ -38,3 +38,18 @@ function assignShift(employeeName, day, hours){
         //logging update to user
     }}
 }
+
+//Task 4
+function calculateTotalHours(employeeName){
+    let employeeFound = employees.find((employee) => employee.name === employeeName);
+    if (!employeeFound) {
+        return `Sorry, employee not found.`; //logging error if employee not found
+        }
+    else {
+        let totalWorkHours = employeeFound.shifts.reduce((total, shift) => total + shift.hours, 0);
+        //calculating total hours worked using reduce
+        return `${employeeName} has worked ${totalWorkHours} hours in total this week.`;
+        //logging output to user
+    }
+}
+
