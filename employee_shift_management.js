@@ -7,3 +7,11 @@ const employees = [
     {name: 'Selena Gomez', shifts: [{ day: 'Thursday', hours: 8 }] }
 ];
 //creating an array of employee objects that stores their shift details
+
+//Task 2
+function displayEmployeeShifts(employeeShift) {
+    console.log(`The name of this employee is ${employeeShift.name} and they are scheduled as follows:`);
+    employeeShift.shifts.forEach((shift) => 
+        console.log(`day: ${shift.day}, hours: ${shift.hours}`)); 
+    //using forEach and template literals to display details of the employee object input
+}
