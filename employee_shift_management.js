@@ -53,3 +53,29 @@ function calculateTotalHours(employeeName){
     }
 }
 
+//Task 5
+function listAvailableEmployees(day){
+    let availEmployeesFound = [];
+    //creating list/array of employees working this day
+    employees.forEach((employee) => 
+        employee.shifts.forEach((shift) => {
+            if (shift.day === day)
+                {availEmployeesFound.push(employee.name)};
+            //adding employee name if they work that day
+}))
+    return `${availEmployeesFound} is/are working on ${day}`; //returning results to user
+}
+
+//testing all functions created
+console.log("Test task 2:");
+displayEmployeeShifts({name: 'Ed Sheeran', shifts: [{ day: 'Friday', hours: 6 }, { day: 'Monday', hours: 4 }]});
+console.log("Test task 3:");
+console.log(assignShift('Selena Gomez', 'Friday', 5));
+console.log("Verify task 3:");
+displayEmployeeShifts(employees[3])
+console.log("Test task 4:");
+console.log(calculateTotalHours('Selena Gomez'));
+console.log("Test task 4 again:");
+console.log(calculateTotalHours('Ed Sheeran'));
+console.log("Test task 5:");
+console.log(listAvailableEmployees('Friday'));
